@@ -1,12 +1,12 @@
-# 📦 mlops-platform-versioning
+#  mlops-platform-versioning
 
-## 🎯 Project Scope
+##  Project Scope
 A **self‑contained versioning platform** that enforces reproducibility across **data, code, and models**.  
 This project demonstrates how to build a full stack MLOps system with no external dependencies.
 
 ---
 
-## ⚙️ Tech Stack
+##  Tech Stack
 - **Infra & Orchestration:** Kubernetes (EKS), Crossplane, Argo CD / Flux  
 - **Versioning & Tracking:** Git, DVC, MLflow  
 - **CI/CD Enforcement:** GitHub Actions / GitLab CI  
@@ -14,7 +14,7 @@ This project demonstrates how to build a full stack MLOps system with no externa
 
 ---
 
-## 🛠️ Platform Features
+##  Platform Features
 - **Crossplane Infra** → declarative provisioning of storage (S3/MinIO, PVCs).  
 - **DVC Pipelines** → dataset and model versioning integrated with Git.  
 - **MLflow Tracking** → experiment metadata, parameters, and artifact logging.  
@@ -22,7 +22,7 @@ This project demonstrates how to build a full stack MLOps system with no externa
 
 ---
 
-## 🚀 Reproducibility in 3 Steps
+##  Reproducibility in 3 Steps
 1. **Clone the repo**  
    ```bash
    git clone https://github.com/your-org/mlops-platform-versioning
@@ -82,5 +82,4 @@ mlops-platform-versioning/
 └── README.md                      # Top-level project overview
 
 ```
-
 
