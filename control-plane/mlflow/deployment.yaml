@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mlflow-server
+  labels:
+    app: mlflow
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mlflow
+  template:
+    metadata:
+      labels:
+        app: mlflow
+    spec:
+      containers:
+        - name: mlflow
+          image: cr.flyte.org/mlflow:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: BACKEND_STORE_URI
+              value: postgresql://mlflow:mlflowpass@postgres:5432/mlflowdb
+            - name: ARTIFACT_ROOT
+              value: s3://mlops-artifacts-bucket
+          volumeMounts:
+            - name: mlflow-pvc
+              mountPath: /mlflow
+      volumes:
+        - name: mlflow-pvc
+          persistentVolumeClaim:
+            claimName: mlops-cache-pvc

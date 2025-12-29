@@ -1,0 +1,9 @@
+apiVersion: s3.aws.crossplane.io/v1alpha3
+kind: Bucket
+metadata:
+  name: mlops-artifacts-bucket
+spec:
+  forProvider:
+    locationConstraint: us-east-1
+    acl: private
+  reclaimPolicy: Delete

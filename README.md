@@ -1,4 +1,4 @@
-#  mlops-platform-versioning
+# MLOps Versioning Platform with DVC
 
 ##  Project Scope
 A **self‑contained versioning platform** that enforces reproducibility across **data, code, and models**.  

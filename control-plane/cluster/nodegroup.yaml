@@ -1,0 +1,8 @@
+apiVersion: eksctl.io/v1alpha5
+kind: NodeGroup
+metadata:
+  name: gpu-nodes
+  clusterName: mlops-versioning-cluster
+spec:
+  instanceType: g4dn.xlarge
+  desiredCapacity: 1

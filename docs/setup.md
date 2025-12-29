@@ -71,3 +71,37 @@ Step 8: Validate End-to-End
 ✅ Run full flow:
 
 Push code → CI/CD triggers → GitOps reconciles → Crossplane provisions → MLflow logs → DVC tracks → Experiment reproducible
+
+
+========================
+Setup Commands : 
+==========================
+
+Step 1 (Cluster Bootstrap)
+
+- eks-cluster.yaml → defines the cluster itself.
+- nodegroup.yaml → GPU node scaling.
+- provider-config.yaml → Crossplane credentials for AWS infra.  
+
+Run eksctl create cluster -f eks-cluster.yaml. This gives you the base cluster where all other manifests will be deployed. 
+
+Outcome: A Kubernetes cluster with CPU/GPU nodes and Crossplane ready to provision infra.
+
+Step 2: Crossplane manifests 
+
+- s3-bucket.yaml → artifact store for reproducibility.
+- pvc.yaml → caching layer for pipelines.
+- provider-configs/ → credentials for infra provisioning.
+
+ After this step, you’ll have storage ready: artifacts in S3, cache in PVC. 
+ This is the backbone for DVC + MLflow integration.
+
+ Step 3: MLflow deployment manifests 
+Outcome : 
+
+- deployment.yaml → runs MLflow server with SQLite + S3 backend.
+- config/ingress.yaml → exposes MLflow UI externally.
+- PVC mount → ensures caching for faster reproducibility.
+
+
+ 
