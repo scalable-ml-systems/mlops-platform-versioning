@@ -4,6 +4,9 @@
 A **self‑contained versioning platform** that enforces reproducibility across **data, code, and models**.  
 This project demonstrates how to build a full stack MLOps system with no external dependencies.
 
+<img width="5234" height="3413" alt="GitOps CI_CD Crossplane-2026-01-03-004921" src="https://github.com/user-attachments/assets/8c3cacf9-fb00-4626-b325-56a4c284712f" />
+
+
 ---
 
 ##  Tech Stack
